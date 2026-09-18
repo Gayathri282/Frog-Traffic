@@ -1,0 +1,146 @@
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  width: 100%;
+  min-height: 100%;
+  background: #111;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  overflow: hidden;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  touch-action: none;
+}
+
+#wrap {
+  width: min(100vw, 480px);
+  height: 100dvh;
+  max-height: 900px;
+  position: relative;
+  background: #76a95c;
+  overflow: hidden;
+  transform: translateZ(0);
+  will-change: transform;
+}
+
+canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+  touch-action: none;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+}
+
+.hud {
+  position: absolute;
+  top: max(12px, env(safe-area-inset-top));
+  left: 12px;
+  right: 12px;
+  display: flex;
+  justify-content: space-between;
+  gap: 6px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.pill {
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(4px);
+  border-radius: 999px;
+  padding: 7px 12px;
+  font-size: 13px;
+  font-weight: 900;
+  color: #222;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  user-select: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: rgba(10, 15, 10, 0.65);
+  backdrop-filter: blur(6px);
+  z-index: 4;
+  transition: opacity 0.2s ease;
+}
+
+.panel {
+  width: min(320px, 90%);
+  padding: 25px 22px;
+  border-radius: 22px;
+  background: #fff;
+  text-align: center;
+  color: #20252a;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  animation: popIn 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes popIn {
+  from { transform: scale(0.85); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+.panel h1 {
+  font-size: 29px;
+  margin: 0 0 8px;
+}
+
+.panel p {
+  font-size: 14px;
+  line-height: 1.5;
+  color: #666;
+  margin: 0 0 18px;
+}
+
+button {
+  border: 0;
+  border-radius: 14px;
+  min-height: 50px;
+  padding: 0 24px;
+  font-size: 16px;
+  font-weight: 900;
+  background: #dfe9d8;
+  color: #20252a;
+  touch-action: manipulation;
+  cursor: pointer;
+  transition: transform 0.1s, background 0.15s;
+  user-select: none;
+}
+
+button:active {
+  transform: scale(0.95);
+}
+
+.controls {
+  position: absolute;
+  left: 12px;
+  right: 12px;
+  bottom: max(12px, env(safe-area-inset-bottom));
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 10px;
+  z-index: 3;
+}
+
+.controls button {
+  height: 54px;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(4px);
+  font-size: 23px;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+}

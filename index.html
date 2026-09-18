@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+  <title>Frog Road Crossing</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="js/audio.js" defer></script>
+  <script src="js/vfx.js" defer></script>
+  <script src="js/game.js" defer></script>
+</head>
+<body>
+  <div id="wrap">
+    <canvas id="game" width="480" height="900"></canvas>
+    
+    <div class="hud">
+      <span class="pill" id="lvl">Level 1</span>
+      <span class="pill" id="dist">0 m</span>
+      <span class="pill" id="coin">🪙 0</span>
+      <button class="pill" id="soundBtn" style="pointer-events:auto;cursor:pointer;border:none;">🔊 Sound</button>
+    </div>
+
+    <div class="overlay" id="overlay">
+      <div class="panel">
+        <h1 id="title">🐸 Road Hopper</h1>
+        <p id="msg">Tap the screen or press ↑ to hop forward. Swipe left/right or press ← / → to move sideways. Reach the top without getting hit!</p>
+        <button id="start">Start Game</button>
+      </div>
+    </div>
+
+    <div class="controls">
+      <button id="L" aria-label="Move left">←</button>
+      <button id="F" aria-label="Move forward">↑</button>
+      <button id="R" aria-label="Move right">→</button>
+    </div>
+  </div>
+</body>
+</html>
