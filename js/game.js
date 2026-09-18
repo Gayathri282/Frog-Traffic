@@ -214,14 +214,7 @@
     distance += step * 0.25;
     frog.bob = 0.9;
 
-    const prevLevel = level;
-    level = Math.max(1, Math.floor(distance / 55) + 1);
     updateHud();
-
-    if (level > prevLevel) {
-      playLevelUpSound();
-      triggerFlash('rgba(100, 255, 100, 0.3)', 0.35);
-    }
 
     if (frog.y < roadY() - 10) {
       completeLevel();
@@ -231,8 +224,10 @@
   function completeLevel() {
     running = false;
     stopBgMusic();
+    level++;
     playLevelUpSound();
     spawnLevelUpVfx(W, H);
+    updateHud();
 
     title.textContent = '🎉 Level ' + level + '!';
     msg.textContent = 'You crossed safely! Traffic gets faster on the next level — be careful! 🐸';
@@ -649,7 +644,7 @@
     if (!nextLevel) {
       resetGame();
     } else {
-      distance = (level - 1) * 55;
+      distance = 0;
       frog.y = H - 130;
       frog.x = W / 2;
       frog.targetX = W / 2;
