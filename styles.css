@@ -8,7 +8,7 @@ html, body {
   margin: 0;
   width: 100%;
   min-height: 100%;
-  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+  background: linear-gradient(135deg, #fce4ec 0%, #e8eaf6 50%, #e0f7fa 100%);
   font-family: 'Nunito', system-ui, -apple-system, sans-serif;
   overflow: hidden;
   -webkit-tap-highlight-color: transparent;
@@ -26,12 +26,12 @@ body {
   height: 100dvh;
   max-height: 900px;
   position: relative;
-  background: #76a95c;
+  background: #d4edda;
   overflow: hidden;
   transform: translateZ(0);
   will-change: transform;
   border-radius: 0;
-  box-shadow: 0 0 60px rgba(121, 201, 87, 0.25);
+  box-shadow: 0 0 60px rgba(186, 220, 193, 0.45);
 }
 
 canvas {
@@ -77,15 +77,15 @@ canvas {
 }
 
 .pill:nth-child(1) {
-  background: linear-gradient(135deg, rgba(116, 185, 255, 0.95), rgba(99, 160, 255, 0.95));
-  color: #fff;
-  text-shadow: 0 1px 2px rgba(0,0,0,0.15);
+  background: linear-gradient(135deg, rgba(179, 229, 252, 0.95), rgba(144, 202, 249, 0.95));
+  color: #37474f;
+  text-shadow: 0 1px 1px rgba(255,255,255,0.5);
 }
 
 .pill:nth-child(3) {
-  background: linear-gradient(135deg, rgba(253, 203, 110, 0.95), rgba(255, 177, 66, 0.95));
-  color: #5a3e00;
-  text-shadow: 0 1px 1px rgba(255,255,255,0.3);
+  background: linear-gradient(135deg, rgba(255, 236, 179, 0.95), rgba(255, 224, 130, 0.95));
+  color: #5d4037;
+  text-shadow: 0 1px 1px rgba(255,255,255,0.4);
 }
 
 /* ───── Overlay & Panel ───── */
@@ -96,7 +96,7 @@ canvas {
   align-items: center;
   justify-content: center;
   padding: 24px;
-  background: rgba(10, 15, 25, 0.55);
+  background: rgba(240, 230, 250, 0.55);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   z-index: 4;
@@ -107,7 +107,7 @@ canvas {
   width: min(330px, 92%);
   padding: 32px 26px 28px;
   border-radius: 28px;
-  background: linear-gradient(165deg, #ffffff 0%, #f0f4f8 100%);
+  background: linear-gradient(165deg, #ffffff 0%, #fce4ec 100%);
   text-align: center;
   color: #20252a;
   box-shadow:
@@ -126,7 +126,7 @@ canvas {
   font-weight: 900;
   margin: 0 0 6px;
   font-family: 'Nunito', system-ui, sans-serif;
-  background: linear-gradient(135deg, #00b894, #55efc4);
+  background: linear-gradient(135deg, #81c784, #a5d6a7);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -149,25 +149,25 @@ button {
   font-size: 16px;
   font-weight: 900;
   font-family: 'Nunito', system-ui, sans-serif;
-  background: linear-gradient(135deg, #00b894 0%, #55efc4 100%);
-  color: #fff;
+  background: linear-gradient(135deg, #a5d6a7 0%, #c8e6c9 100%);
+  color: #2e7d32;
   text-shadow: 0 1px 2px rgba(0,0,0,0.12);
   touch-action: manipulation;
   cursor: pointer;
   transition: transform 0.12s ease, box-shadow 0.12s ease;
   user-select: none;
-  box-shadow: 0 4px 15px rgba(0, 184, 148, 0.35);
+  box-shadow: 0 4px 15px rgba(165, 214, 167, 0.55);
   letter-spacing: 0.5px;
 }
 
 button:hover {
   transform: translateY(-1px);
-  box-shadow: 0 6px 20px rgba(0, 184, 148, 0.45);
+  box-shadow: 0 6px 20px rgba(165, 214, 167, 0.65);
 }
 
 button:active {
   transform: scale(0.95) translateY(0);
-  box-shadow: 0 2px 8px rgba(0, 184, 148, 0.3);
+  box-shadow: 0 2px 8px rgba(165, 214, 167, 0.45);
 }
 
 /* ───── Controls ───── */
@@ -205,18 +205,18 @@ button:active {
 
 .controls button:active {
   transform: scale(0.92);
-  background: rgba(85, 239, 196, 0.5);
-  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.1);
+  background: rgba(200, 230, 201, 0.6);
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.06);
 }
 
 .controls button#F {
-  background: linear-gradient(180deg, rgba(85, 239, 196, 0.55) 0%, rgba(0, 184, 148, 0.45) 100%);
-  border-color: rgba(0, 184, 148, 0.4);
+  background: linear-gradient(180deg, rgba(200, 230, 201, 0.7) 0%, rgba(165, 214, 167, 0.6) 100%);
+  border-color: rgba(165, 214, 167, 0.5);
   font-size: 28px;
 }
 
 .controls button#F:active {
-  background: rgba(0, 184, 148, 0.6);
+  background: rgba(165, 214, 167, 0.7);
 }
 
 /* ───── Sound Toggle Pill ───── */

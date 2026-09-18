@@ -92,7 +92,7 @@ function spawnHitVfx(x, y) {
     size: 26
   });
 
-  const colors = ['#d85d57', '#ff8800', '#ff2200', '#444444', '#ffffff'];
+  const colors = ['#f8bbd0', '#ffcc80', '#ffab91', '#b0bec5', '#ffffff'];
   for (let i = 0; i < 30; i++) {
     const angle = Math.random() * Math.PI * 2;
     const speed = 60 + Math.random() * 160;
@@ -194,7 +194,7 @@ function drawVfx(ctx, W, H) {
     ctx.save();
     ctx.globalAlpha = ft.opacity;
     ctx.font = '900 ' + ft.size + 'px system-ui';
-    ctx.fillStyle = '#000';
+    ctx.fillStyle = 'rgba(0,0,0,0.08)';
     ctx.textAlign = 'center';
     ctx.fillText(ft.text, ft.x + 2, ft.y + 2);
     ctx.fillStyle = ft.color;

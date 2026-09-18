@@ -46,20 +46,20 @@
 
   // Cute car color palettes (body, accent)
   const carColors = [
-    { body: '#ff6b6b', accent: '#ee5a5a' },  // coral red
-    { body: '#feca57', accent: '#f0b723' },  // sunny yellow
-    { body: '#48dbfb', accent: '#0abde3' },  // sky blue
-    { body: '#ff9ff3', accent: '#f368e0' },  // bubblegum pink
-    { body: '#54a0ff', accent: '#2e86de' },  // ocean blue
-    { body: '#5f27cd', accent: '#341f97' },  // grape purple
-    { body: '#1dd1a1', accent: '#10ac84' },  // mint green
-    { body: '#ff9f43', accent: '#ee8520' },  // tangerine
+    { body: '#ffb3b3', accent: '#ff9999' },  // pastel coral
+    { body: '#fff3b0', accent: '#ffe680' },  // pastel yellow
+    { body: '#b3e5fc', accent: '#81d4fa' },  // pastel sky
+    { body: '#f8bbd0', accent: '#f48fb1' },  // pastel pink
+    { body: '#bbdefb', accent: '#90caf9' },  // pastel blue
+    { body: '#d1c4e9', accent: '#b39ddb' },  // pastel lavender
+    { body: '#b2dfdb', accent: '#80cbc4' },  // pastel mint
+    { body: '#ffe0b2', accent: '#ffcc80' },  // pastel peach
   ];
   const truckColors = [
-    { body: '#c44569', accent: '#b33650' },
-    { body: '#e17055', accent: '#d05540' },
-    { body: '#6c5ce7', accent: '#5a4bd1' },
-    { body: '#00b894', accent: '#009975' },
+    { body: '#f8bbd0', accent: '#f48fb1' },
+    { body: '#ffccbc', accent: '#ffab91' },
+    { body: '#d1c4e9', accent: '#b39ddb' },
+    { body: '#c8e6c9', accent: '#a5d6a7' },
   ];
 
   // Pre-generate random grass decorations (flowers, tufts)
@@ -327,7 +327,7 @@
     ctx.fill();
 
     // Pupils (with subtle look-direction)
-    ctx.fillStyle = '#1a1a2e';
+    ctx.fillStyle = '#4a5568';
     ctx.beginPath();
     ctx.arc(-9, -17, 3.5, 0, Math.PI * 2);
     ctx.fill();
@@ -398,7 +398,7 @@
     }
 
     // Wheels (cute round)
-    ctx.fillStyle = '#2d3436';
+    ctx.fillStyle = '#90a4ae';
     ctx.beginPath();
     ctx.arc(-hw + 10, 14, 6, 0, Math.PI * 2);
     ctx.fill();
@@ -480,15 +480,15 @@
 
     // ─ Sky-tinted grass background ─
     const grassGrad = ctx.createLinearGradient(0, 0, 0, H);
-    grassGrad.addColorStop(0, '#8fd16a');
-    grassGrad.addColorStop(0.12, '#7bc75b');
-    grassGrad.addColorStop(0.85, '#6abb4d');
-    grassGrad.addColorStop(1, '#5dac40');
+    grassGrad.addColorStop(0, '#c8f7c5');
+    grassGrad.addColorStop(0.12, '#b9f6ca');
+    grassGrad.addColorStop(0.85, '#a5d6a7');
+    grassGrad.addColorStop(1, '#c8e6c9');
     ctx.fillStyle = grassGrad;
     ctx.fillRect(0, 0, W, H);
 
     // ─ Finish Zone (checkerboard!) ─
-    ctx.fillStyle = '#c8e6a4';
+    ctx.fillStyle = '#e8f5e9';
     ctx.fillRect(0, 0, W, 85);
     // Mini checkerboard
     const tileS = 18;
@@ -505,7 +505,7 @@
     // FINISH text with outline
     ctx.font = '900 17px Nunito, system-ui';
     ctx.textAlign = 'center';
-    ctx.strokeStyle = '#3a6a20';
+    ctx.strokeStyle = '#81c784';
     ctx.lineWidth = 3;
     ctx.strokeText('🏁 FINISH 🏁', W / 2, 46);
     ctx.fillStyle = '#ffffff';
@@ -524,7 +524,7 @@
         ctx.fillText(d.emoji, 0, 0);
       } else {
         // Grass tuft
-        ctx.strokeStyle = '#5aad38';
+        ctx.strokeStyle = '#81c784';
         ctx.lineWidth = 2;
         ctx.lineCap = 'round';
         ctx.beginPath();
@@ -538,15 +538,15 @@
 
     // ─ Road ─
     const roadGrad = ctx.createLinearGradient(0, roadY(), 0, roadY() + 430);
-    roadGrad.addColorStop(0, '#3d4451');
-    roadGrad.addColorStop(0.5, '#353b48');
-    roadGrad.addColorStop(1, '#2d3436');
+    roadGrad.addColorStop(0, '#1a1a3e');
+    roadGrad.addColorStop(0.5, '#1e2a4a');
+    roadGrad.addColorStop(1, '#16213e');
     ctx.fillStyle = roadGrad;
     roundRect(0, roadY(), W, 430, 0);
     ctx.fill();
 
     // Lane dashes (softer)
-    ctx.strokeStyle = 'rgba(255,255,255,0.25)';
+    ctx.strokeStyle = 'rgba(255,255,255,0.3)';
     ctx.lineWidth = 2.5;
     ctx.setLineDash([28, 22]);
     for (const y of lanes) {
@@ -558,11 +558,11 @@
     ctx.setLineDash([]);
 
     // Curb lines (soft yellow)
-    ctx.fillStyle = '#f9ca24';
+    ctx.fillStyle = '#ffcc80';
     ctx.fillRect(0, 260, W, 5);
     ctx.fillRect(0, 700, W, 5);
     // Curb edge highlight
-    ctx.fillStyle = 'rgba(255,255,255,0.15)';
+    ctx.fillStyle = 'rgba(255,255,255,0.35)';
     ctx.fillRect(0, 258, W, 2);
     ctx.fillRect(0, 705, W, 2);
 
